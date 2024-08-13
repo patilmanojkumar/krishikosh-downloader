@@ -5,7 +5,12 @@ def edit_url(url):
     try:
         # Extract the encoded path after "file="
         start_index = url.find("file=") + len("file=")
-        encoded_path = url[start_index:]
+        
+        # Find the position where 'content' starts
+        end_index = url.find("content") + len("content")
+        
+        # Extract the encoded file path from start_index to end_index
+        encoded_path = url[start_index:end_index]
         
         # Decode the encoded file path
         decoded_path = unquote(encoded_path)
@@ -35,7 +40,7 @@ if st.button("Download"):
         edited_url = edit_url(input_url)
         if edited_url:
             # Provide a link to the edited URL that the user can click
-            st.success("Link Generated successfully!, Click the link below to download the file.")
+            st.success("Link Generated successfully! Click the link below to download the file.")
             st.markdown(f"[Download File]({edited_url})", unsafe_allow_html=True)
         else:
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
