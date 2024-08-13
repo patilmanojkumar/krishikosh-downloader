@@ -2,28 +2,45 @@ import streamlit as st
 from urllib.parse import unquote
 
 def edit_url(url):
-    # Extract the encoded path after "file="
-    start_index = url.find("file=") + len("file=")
-    encoded_path = url[start_index:]
-    
-    # Decode the encoded file path
-    decoded_path = unquote(encoded_path)
-    
-    # The decoded path already contains the base URL, so no need to add it again
-    return decoded_path
+    try:
+        # Extract the encoded path after "file="
+        start_index = url.find("file=") + len("file=")
+        encoded_path = url[start_index:]
+        
+        # Decode the encoded file path
+        decoded_path = unquote(encoded_path)
+        
+        # The decoded path already contains the base URL, so no need to add it again
+        return decoded_path
+    except Exception:
+        return None
 
 # Streamlit app UI
-st.title("URL Editor")
+st.title("Krishikosh Downloader")
+st.markdown("**Easily download files from Krishikosh.**")
 
 # Input field for the user to paste the URL
-input_url = st.text_input("Paste the URL here:")
+input_url = st.text_input("Paste the full-length Krishikosh URL here:")
 
-# Button to edit the URL
-if st.button("Generate Edited URL"):
+# Instructions for the user
+st.markdown("""
+Please ensure that the URL you input follows the correct format:
+- Example of correct URL: `https://krishikosh.egranth.ac.in/assets/pdfjs/web/viewer.html?file=https%3A%2F%2Fkrishikosh.egranth.ac.in%2Fserver%2Fapi%2Fcore%2Fbitstreams%2Fb8a091b0-6e12-43c1-8c29-63ba25519a43%2Fcontent`
+- Incorrect URLs may not work as expected.
+""")
+
+# Single button to edit the URL and follow the link
+if st.button("Download"):
     if input_url:
         edited_url = edit_url(input_url)
-        st.success("Here is your edited URL:")
-        st.write(edited_url)
-        
-        # Button to go to the edited URL
-        st.markdown(f"[Go to Edited URL]({edited_url})", unsafe_allow_html=True)
+        if edited_url:
+            # Follow the edited URL in a new tab
+            st.markdown(f"""
+                <script>
+                    window.open("{edited_url}");
+                </script>
+                """, unsafe_allow_html=True)
+        else:
+            st.error("The URL you provided does not appear to be in the correct format. Please try again.")
+    else:
+        st.warning("Please enter a URL to proceed.")
