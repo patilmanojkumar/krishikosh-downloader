@@ -22,7 +22,22 @@ def edit_url(url):
 
 # Streamlit app UI
 st.title("Krishikosh Downloader")
-st.markdown("**Easily download files from Krishikosh.**")
+st.set_page_config(layout="wide")
+st.markdown(
+    "<h1 style='text-align: center;'>Krishikosh Downloader by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
+    unsafe_allow_html=True
+)
+# Displaying the dynamic SVG banner
+st.markdown(
+    """
+    <p align="center">
+      <a href="https://github.com/DenverCoder1/readme-typing-svg">
+        <img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=yellow&size=30&center=true&vCenter=true&width=600&height=100&lines=Easily+download+thesis+from+Krishikosh!;trend_analyser-1.0;" alt="Typing SVG">
+      </a>
+    </p>
+    """,
+    unsafe_allow_html=True
+)
 
 # Input field for the user to paste the URL
 input_url = st.text_input("Paste the full-length Krishikosh URL here:")
