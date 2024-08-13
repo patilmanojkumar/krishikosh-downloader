@@ -21,7 +21,6 @@ def edit_url(url):
         return None
 
 # Streamlit app UI
-st.set_page_config(layout="centered", page_icon="📄", initial_sidebar_state="collapsed")
 st.markdown(
     """
     <h1 style='text-align: center; font-size: 24px;'>Krishikosh Downloader</h1>
@@ -39,18 +38,17 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.markdown("**Easily download files from Krishikosh.**")
 
 # Input field for the user to paste the URL
 input_url = st.text_input("Paste the full-length Krishikosh URL here:")
 
 # Instructions for the user
 st.markdown("""
-<div style="font-size: 14px;">
 Please ensure that the URL you input follows the correct format:
-<br>- Example: `https://krishikosh.egranth.ac.in/assets/pdfjs/web/viewer.html?file=https%3A%2F%2Fkrishikosh.egranth.ac.in%2Fserver%2Fapi%2Fcore%2Fbitstreams%2Fb8a091b0-6e12-43c1-8c29-63ba25519a43%2Fcontent`
-<br>- Incorrect URLs may not work as expected.
-</div>
-""", unsafe_allow_html=True)
+- Example of correct URL: `https://krishikosh.egranth.ac.in/assets/pdfjs/web/viewer.html?file=https%3A%2F%2Fkrishikosh.egranth.ac.in%2Fserver%2Fapi%2Fcore%2Fbitstreams%2Fb8a091b0-6e12-43c1-8c29-63ba25519a43%2Fcontent`
+- Incorrect URLs may not work as expected.
+""")
 
 # Single button to edit the URL and follow the link
 if st.button("Download"):
@@ -58,8 +56,8 @@ if st.button("Download"):
         edited_url = edit_url(input_url)
         if edited_url:
             # Provide a link to the edited URL that the user can click
-            st.success("Link generated successfully! Click the link below to download the file.")
-            st.markdown(f"<a href='{edited_url}' target='_blank'>Download File</a>", unsafe_allow_html=True)
+            st.success("Link Generated successfully! Click the link below to download the file.")
+            st.markdown(f"[Download File]({edited_url})", unsafe_allow_html=True)
         else:
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
     else:
