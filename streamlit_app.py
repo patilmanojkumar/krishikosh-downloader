@@ -22,16 +22,16 @@ def edit_url(url):
 
 # Streamlit app UI
 st.markdown(
-    "<h1 style='text-align: center;'>Trend Analyser by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
+    "<h1 style='text-align: center;'>Krishikosh Downloader by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
     unsafe_allow_html=True
 )
-#st.title('Trend Analyser by [Manojkumar Patil](https://github.com/patilmanojkumar)')
+#st.title('Krishikosh Downloader by [Manojkumar Patil](https://github.com/patilmanojkumar)')
 # Displaying the dynamic SVG banner
 st.markdown(
     """
     <p align="center">
       <a href="https://github.com/DenverCoder1/readme-typing-svg">
-        <img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=yellow&size=30&center=true&vCenter=true&width=600&height=100&lines=Trend+Analysis+Made+Simple!;trend_analyser-1.0;" alt="Typing SVG">
+        <img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=yellow&size=30&center=true&vCenter=true&width=600&height=100&lines=Download+Thesis+From+Krishikosh!;" alt="Typing SVG">
       </a>
     </p>
     """,
