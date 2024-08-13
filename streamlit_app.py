@@ -36,10 +36,10 @@ if st.button("Generate Link"):
         if edited_url:
             st.success("Link generated successfully! Click the button below to download the file.")
             
-            # Create a download button
-            download_button = st.button("Download File")
-            if download_button:
-                st.markdown(f'<meta http-equiv="refresh" content="0; url={edited_url}" />', unsafe_allow_html=True)
+            # Create a download button that opens the link in a new tab
+            if st.button("Download File"):
+                js = f"window.open('{edited_url}');"
+                st.markdown(f'<script>{js}</script>', unsafe_allow_html=True)
         else:
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
     else:
