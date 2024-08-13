@@ -35,7 +35,7 @@ if st.button("Download"):
         edited_url = edit_url(input_url)
         if edited_url:
             # Provide a link to the edited URL that the user can click
-            st.success("URL edited successfully! Click the link below to download the file.")
+            st.success("Link generated successfully! Click the link below to download the file.")
             st.markdown(f"[Download File]({edited_url})", unsafe_allow_html=True)
         else:
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
