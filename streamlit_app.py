@@ -2,10 +2,6 @@ import streamlit as st
 from urllib.parse import unquote
 
 def edit_url(url):
-    # Extract the base URL before the first occurrence of "/assets/pdfjs/web/viewer.html"
-    base_url_end_index = url.find("/assets/pdfjs/web/viewer.html")
-    base_url = url[:base_url_end_index]
-    
     # Extract the encoded path after "file="
     start_index = url.find("file=") + len("file=")
     encoded_path = url[start_index:]
@@ -13,10 +9,8 @@ def edit_url(url):
     # Decode the encoded file path
     decoded_path = unquote(encoded_path)
     
-    # Construct the final URL
-    final_url = f"{base_url}{decoded_path}"
-    
-    return final_url
+    # The decoded path already contains the base URL, so no need to add it again
+    return decoded_path
 
 # Streamlit app UI
 st.title("URL Editor")
