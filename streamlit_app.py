@@ -75,10 +75,14 @@ if st.button("Download"):
 
 # Add a "Buy me a coffee" section with QR code
 st.markdown("---")  # Add a horizontal line for separation
+
+# Display the QR code with custom HTML and CSS for positioning
 st.markdown(
-    "<h3 style='text-align: center;'>If you like this app, consider buying me a coffee!</h3>",
+    """
+    <div style='position: fixed; right: 10px; bottom: 10px; text-align: center;'>
+        <p style='font-size: 14px;'>If you like this app, consider buying me a coffee!</p>
+        <img src='https://github.com/patilmanojkumar/krishikosh-downloader/raw/main/QR_GPAY.jpg' alt='Buy me a coffee' style='width: 100px;'>
+    </div>
+    """,
     unsafe_allow_html=True
 )
-
-# Display the QR code image
-st.image("https://github.com/patilmanojkumar/krishikosh-downloader/raw/main/QR_GPAY.jpg", caption="Scan to pay via GPay", use_column_width=True)
