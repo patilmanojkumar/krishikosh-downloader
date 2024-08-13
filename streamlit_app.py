@@ -30,7 +30,7 @@ Please ensure that the URL you input follows the correct format:
 """)
 
 # Single button to edit the URL and follow the link
-if st.button("Download"):
+if st.button("Generate Link"):
     if input_url:
         edited_url = edit_url(input_url)
         if edited_url:
