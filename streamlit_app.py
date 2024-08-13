@@ -31,7 +31,7 @@ st.markdown(
     """
     <p align="center">
       <a href="https://github.com/DenverCoder1/readme-typing-svg">
-        <img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=yellow&size=30&center=true&vCenter=true&width=600&height=100&lines=Easily+download+thesis+from+Krishikosh!;trend_analyser-1.0;" alt="Typing SVG">
+        <img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=yellow&size=30&center=true&vCenter=true&width=600&height=100&lines=Download+thesis+from+Krishikosh!;" alt="Typing SVG">
       </a>
     </p>
     """,
