@@ -8,7 +8,6 @@ def edit_url(url):
         encoded_path = url[start_index:]
         
         # Decode the encoded file path
-        decoded_path
         decoded_path = unquote(encoded_path)
         
         # The decoded path already contains the base URL, so no need to add it again
@@ -30,21 +29,14 @@ Please ensure that the URL you input follows the correct format:
 - Incorrect URLs may not work as expected.
 """)
 
-# Single button to edit the URL and provide a downloadable link
-if st.button("Generate Link"):
+# Single button to edit the URL and follow the link
+if st.button("Download"):
     if input_url:
         edited_url = edit_url(input_url)
         if edited_url:
-            st.success("Link generated successfully! Click the button below to download the file.")
-            
-            # Display a clickable Markdown link that looks like a button
-            st.markdown(f"""
-                <a href="{edited_url}" target="_blank">
-                    <button style="padding:10px 20px; font-size:16px; color:white; background-color:#4CAF50; border:none; border-radius:5px; cursor:pointer;">
-                        Download File
-                    </button>
-                </a>
-                """, unsafe_allow_html=True)
+            # Provide a link to the edited URL that the user can click
+            st.success("URL edited successfully! Click the link below to download the file.")
+            st.markdown(f"[Download File]({edited_url})", unsafe_allow_html=True)
         else:
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
     else:
