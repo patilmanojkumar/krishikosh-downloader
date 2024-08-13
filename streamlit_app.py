@@ -34,12 +34,9 @@ if st.button("Download"):
     if input_url:
         edited_url = edit_url(input_url)
         if edited_url:
-            # Follow the edited URL in a new tab
-            st.markdown(f"""
-                <script>
-                    window.open("{edited_url}");
-                </script>
-                """, unsafe_allow_html=True)
+            # Provide a link to the edited URL that the user can click
+            st.success("URL edited successfully! Click the link below to download the file.")
+            st.markdown(f"[Download File]({edited_url})", unsafe_allow_html=True)
         else:
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
     else:
