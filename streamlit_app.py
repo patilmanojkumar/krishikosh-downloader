@@ -8,7 +8,7 @@ def edit_url(url):
         encoded_path = url[start_index:]
         
         # Decode the encoded file path
-        decoded path
+        decoded_path
         decoded_path = unquote(encoded_path)
         
         # The decoded path already contains the base URL, so no need to add it again
