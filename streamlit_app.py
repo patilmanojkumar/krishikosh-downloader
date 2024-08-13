@@ -8,6 +8,7 @@ def edit_url(url):
         encoded_path = url[start_index:]
         
         # Decode the encoded file path
+        decoded path
         decoded_path = unquote(encoded_path)
         
         # The decoded path already contains the base URL, so no need to add it again
@@ -36,10 +37,14 @@ if st.button("Generate Link"):
         if edited_url:
             st.success("Link generated successfully! Click the button below to download the file.")
             
-            # Create a download button that opens the link in a new tab
-            if st.button("Download File"):
-                js = f"window.open('{edited_url}');"
-                st.markdown(f'<script>{js}</script>', unsafe_allow_html=True)
+            # Display a clickable Markdown link that looks like a button
+            st.markdown(f"""
+                <a href="{edited_url}" target="_blank">
+                    <button style="padding:10px 20px; font-size:16px; color:white; background-color:#4CAF50; border:none; border-radius:5px; cursor:pointer;">
+                        Download File
+                    </button>
+                </a>
+                """, unsafe_allow_html=True)
         else:
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
     else:
