@@ -22,10 +22,10 @@ def edit_url(url):
 
 # Streamlit app UI
 st.markdown(
-    "<h1 style='text-align: center;'>Krishikosh Downloader by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
+    "<h1 style='text-align: center; font-size: 24px;'>Krishikosh Downloader by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
     unsafe_allow_html=True
 )
-#st.title('Krishikosh Downloader by [Manojkumar Patil](https://github.com/patilmanojkumar)')
+
 # Displaying the dynamic SVG banner
 st.markdown(
     """
