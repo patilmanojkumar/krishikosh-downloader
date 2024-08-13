@@ -29,14 +29,17 @@ Please ensure that the URL you input follows the correct format:
 - Incorrect URLs may not work as expected.
 """)
 
-# Single button to edit the URL and follow the link
+# Single button to edit the URL and provide a downloadable link
 if st.button("Generate Link"):
     if input_url:
         edited_url = edit_url(input_url)
         if edited_url:
-            # Provide a link to the edited URL that the user can click
-            st.success("URL edited successfully! Click the link below to download the file.")
-            st.markdown(f"[Download File]({edited_url})", unsafe_allow_html=True)
+            st.success("Link generated successfully! Click the button below to download the file.")
+            
+            # Create a download button
+            download_button = st.button("Download File")
+            if download_button:
+                st.markdown(f'<meta http-equiv="refresh" content="0; url={edited_url}" />', unsafe_allow_html=True)
         else:
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
     else:
