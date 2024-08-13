@@ -3,11 +3,19 @@ from urllib.parse import unquote
 
 def edit_url(url):
     try:
+        # Ensure that the URL contains the necessary parts
+        if "file=" not in url or "content" not in url:
+            raise ValueError("The URL is not in the expected format.")
+        
         # Extract the encoded path after "file="
         start_index = url.find("file=") + len("file=")
         
         # Find the position where 'content' starts
         end_index = url.find("content") + len("content")
+        
+        # Ensure that the positions make sense
+        if start_index >= end_index:
+            raise ValueError("The URL is not in the expected format.")
         
         # Extract the encoded file path from start_index to end_index
         encoded_path = url[start_index:end_index]
@@ -17,7 +25,11 @@ def edit_url(url):
         
         # The decoded path already contains the base URL, so no need to add it again
         return decoded_path
-    except Exception:
+    except ValueError as ve:
+        st.error(f"Error: {ve}")
+        return None
+    except Exception as e:
+        st.error(f"An unexpected error occurred: {e}")
         return None
 
 # Streamlit app UI
