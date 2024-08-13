@@ -2,8 +2,11 @@ import streamlit as st
 from urllib.parse import unquote
 
 def edit_url(url):
-    # Extract the main URL and the encoded file path
-    base_url = "https://krishikosh.egranth.ac.in"
+    # Extract the base URL before the first occurrence of "/assets/pdfjs/web/viewer.html"
+    base_url_end_index = url.find("/assets/pdfjs/web/viewer.html")
+    base_url = url[:base_url_end_index]
+    
+    # Extract the encoded path after "file="
     start_index = url.find("file=") + len("file=")
     encoded_path = url[start_index:]
     
@@ -30,4 +33,3 @@ if st.button("Generate Edited URL"):
         
         # Button to go to the edited URL
         st.markdown(f"[Go to Edited URL]({edited_url})", unsafe_allow_html=True)
-
