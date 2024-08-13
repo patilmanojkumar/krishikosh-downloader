@@ -22,7 +22,7 @@ def edit_url(url):
 
 # Streamlit app UI
 st.markdown(
-    "<h1 style='text-align: center; font-size: 48px;'>Krishikosh Downloader by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
+    "<h1 style='text-align: center; font-size: 36px;'>Krishikosh Downloader by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
     unsafe_allow_html=True
 )
 
