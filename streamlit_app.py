@@ -22,23 +22,21 @@ def edit_url(url):
 
 # Streamlit app UI
 st.markdown(
-    """
-    <h1 style='text-align: center; font-size: 24px;'>Krishikosh Downloader</h1>
-    <h3 style='text-align: center;'>by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h3>
-    """, 
+    "<h1 style='text-align: center;'>Trend Analyser by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
     unsafe_allow_html=True
 )
-
-# Dynamic SVG banner
+#st.title('Trend Analyser by [Manojkumar Patil](https://github.com/patilmanojkumar)')
+# Displaying the dynamic SVG banner
 st.markdown(
     """
     <p align="center">
-      <img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=yellow&size=20&center=true&vCenter=true&width=300&height=50&lines=Download+thesis+from+Krishikosh!;" alt="Typing SVG">
+      <a href="https://github.com/DenverCoder1/readme-typing-svg">
+        <img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=yellow&size=30&center=true&vCenter=true&width=600&height=100&lines=Trend+Analysis+Made+Simple!;trend_analyser-1.0;" alt="Typing SVG">
+      </a>
     </p>
     """,
     unsafe_allow_html=True
 )
-st.markdown("**Easily download files from Krishikosh.**")
 
 # Input field for the user to paste the URL
 input_url = st.text_input("Paste the full-length Krishikosh URL here:")
