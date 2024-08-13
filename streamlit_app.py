@@ -72,3 +72,13 @@ if st.button("Download"):
             st.error("The URL you provided does not appear to be in the correct format. Please try again.")
     else:
         st.warning("Please enter a URL to proceed.")
+
+# Add a "Buy me a coffee" section with QR code
+st.markdown("---")  # Add a horizontal line for separation
+st.markdown(
+    "<h3 style='text-align: center;'>If you like this app, consider buying me a coffee!</h3>",
+    unsafe_allow_html=True
+)
+
+# Display the QR code image
+st.image("https://github.com/patilmanojkumar/krishikosh-downloader/raw/main/QR_GPAY.jpg", caption="Scan to pay via GPay", use_column_width=True)
