@@ -22,7 +22,6 @@ def edit_url(url):
 
 # Streamlit app UI
 st.set_page_config(layout="wide")
-st.title("Krishikosh Downloader")
 st.markdown(
     "<h1 style='text-align: center;'>Krishikosh Downloader by <a href='https://github.com/patilmanojkumar'>Manojkumar Patil</a></h1>",
     unsafe_allow_html=True
